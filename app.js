@@ -35,7 +35,7 @@ app.use(function(req,res,next){
     res.locals.success = req.flash("success");
     next();
 });
-mongoose.connect('mongodb://localhost:27017/yelp_camp_v10', { useNewUrlParser : true });
+mongoose.connect(process.env.DATABASEURL,{ useNewUrlParser : true });
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine","ejs");
 app.use(express.static(__dirname + "/public"))
