@@ -36,6 +36,7 @@ app.use(function(req,res,next){
     next();
 });
 mongoose.connect(process.env.DATABASEURL,{ useNewUrlParser : true });
+// mongodb://localhost:27017/yelpcamp_camp_v11
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine","ejs");
 app.use(express.static(__dirname + "/public"))
